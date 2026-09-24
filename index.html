@@ -21,7 +21,7 @@
 </main>
 <script>
   // Hand the bank's one-time approval code to the app on this laptop (it's useless without the app's private key).
-  var target = 'http://localhost:4321/eb/callback' + location.search;
+  var target = 'http://localhost:4321/callback' + location.search;
   document.getElementById('back').href = target;
   location.replace(target);
 </script>
