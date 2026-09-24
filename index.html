@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>Back to Guilder…</title>
+<style>
+  body{margin:0;min-height:100vh;display:grid;place-items:center;background:#FDF2F6;color:#43293A;font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;padding:16px}
+  main{max-width:420px;text-align:center;display:flex;flex-direction:column;gap:12px}
+  a{display:inline-block;background:#C94F80;color:#fff;text-decoration:none;font-weight:700;border-radius:12px;padding:10px 18px}
+  p{margin:0;color:#94707F;font-size:14px}
+</style>
+</head>
+<body>
+<main>
+  <h1 style="margin:0;font-size:22px">Taking you back to Guilder…</h1>
+  <a id="back" href="http://localhost:4321/">Back to Guilder</a>
+  <p>This page only forwards you to the Guilder app on your own laptop. It stores and sends nothing anywhere else.</p>
+  <p>If nothing happens, make sure Guilder is running, then press the button.</p>
+</main>
+<script>
+  // Hand the bank's one-time approval code to the app on this laptop (it's useless without the app's private key).
+  var target = 'http://localhost:4321/eb/callback' + location.search;
+  document.getElementById('back').href = target;
+  location.replace(target);
+</script>
+</body>
+</html>
